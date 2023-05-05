@@ -10,7 +10,7 @@ public class longestNiceSubArray {
         int length = longestNiceSubArray.longestNiceSubArray(nums);
         System.out.println(length);
     }
-//sliding window if two numbers bitwise and is equal to 0 then it is nice sub array. subarray is continuous.
+//sliding window if two numbers bitwise is equal to 0 then it is nice sub array. subarray is continuous.
     private static int longestNiceSubArray(int[] nums) {
 
         int startIndex = 0;
