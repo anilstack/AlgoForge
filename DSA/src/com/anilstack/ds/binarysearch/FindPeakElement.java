@@ -13,7 +13,7 @@ public class FindPeakElement {
 
         int[] firstArr = {1,2,1,3,5,6,10,15,8};
 
-        System.out.println(FindPeakElement.findPeakElement(firstArr));
+        System.out.println(FindPeakElement.findPeakElement(arr));
 
     }
 
