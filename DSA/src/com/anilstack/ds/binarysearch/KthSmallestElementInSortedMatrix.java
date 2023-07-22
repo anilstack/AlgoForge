@@ -19,10 +19,67 @@ public class KthSmallestElementInSortedMatrix {
         int target = 3;
 
      //   System.out.println(KthSmallestElementInSortedMatrix.findKthSmallestElementUsingHeap(matrix, target));
-        System.out.println(KthSmallestElementInSortedMatrix.findKthSmallestElement(matrix, target));
+        System.out.println(KthSmallestElementInSortedMatrix.findKthSmallestElementTest(matrix, target));
 
 
     }
+
+    private static int findKthSmallestElementTest(int[][] matrix, int k) {
+
+//        PriorityQueue<Integer> heap = new PriorityQueue<>((a,b) -> (b-a));
+//
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[0].length; j++) {
+//                heap.offer(matrix[i][j]);
+//                if (heap.size() > k) {
+//                    heap.poll();
+//                }
+//            }
+//        }
+//        return heap.peek();
+
+        int n = matrix.length;
+        //here we are doing binary search on values and try to identify mid value and identify at which index it will fall.
+        int low = matrix[0][0];
+        int high = matrix[n-1][n-1];
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            int correctIndexForMid = findCorrectIndexForMid(matrix,mid);
+            if (correctIndexForMid > k) {
+                high = mid;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return low;
+    }
+
+    private static int findCorrectIndexForMid(int[][] matrix, int mid) {
+
+        int n = matrix.length;
+        int row = n - 1;
+        int col = 0;
+        int counter = 0;
+
+        while (row >=0 && col < n) {
+
+            if (matrix[row][col] > mid) {
+                row--;
+            } else {
+                counter = counter + row + 1;
+                col++;
+            }
+        }
+        return counter;
+    }
+
+
+
+
+
+
+
 
 
     private static int findKthSmallestElement(int[][] matrix, int target) {
