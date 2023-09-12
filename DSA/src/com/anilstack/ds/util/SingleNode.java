@@ -5,6 +5,16 @@ public class SingleNode {
     private int value;
     private SingleNode nextNode;
 
+    public SingleNode() {
+        this.value = 0;
+        //this.nextNode = null;
+    }
+
+    public SingleNode(int value) {
+        this.value = value;
+        //this.nextNode = null;
+    }
+
     public int getValue() {
         return value;
     }
