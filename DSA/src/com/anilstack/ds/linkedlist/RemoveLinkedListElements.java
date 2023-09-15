@@ -32,12 +32,10 @@ public class RemoveLinkedListElements {
                 prev.setNextNode(curr.getNextNode());
                 curr = curr.getNextNode();
             }
-
             prev = prev.getNextNode();
             if (curr !=null) {
                 curr = curr.getNextNode();
             }
-
         }
         return dummy.getNextNode();
 
