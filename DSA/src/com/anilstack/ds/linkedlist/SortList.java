@@ -64,31 +64,31 @@ public class SortList {
         if (head1 == null) return head2;
         if (head2 == null) return head1;
 
-        SingleNode result = new SingleNode();
+        SingleNode result = new SingleNode(-1);
         SingleNode iter = result;
 
         while (head1 !=null && head2 != null) {
 
             if (head1.getValue() < head2.getValue()) {
-                result.setNextNode(head1);
-                result = result.getNextNode();
+                iter.setNextNode(head1);
+                head1 = head1.getNextNode();
                 iter = iter.getNextNode();
             } else {
-                result.setNextNode(head2);
-                result = result.getNextNode();
+                iter.setNextNode(head2);
+                head2 = head2.getNextNode();
                 iter = iter.getNextNode();
             }
         }
 
         while (head1 != null) {
-            result.setNextNode(head1);
-            result = result.getNextNode();
+            iter.setNextNode(head1);
+            head1 = head1.getNextNode();
             iter = iter.getNextNode();
         }
 
         while (head2 != null) {
-            result.setNextNode(head2);
-            result = result.getNextNode();
+            iter.setNextNode(head2);
+            head2 = head2.getNextNode();
             iter = iter.getNextNode();
         }
 
