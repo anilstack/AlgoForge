@@ -29,7 +29,6 @@ public class SplitLinkedList {
         for (SingleNode node : result) {
             System.out.println(node);
         }
-
     }
 
     private static SingleNode[] splitLinkedListInToParts(SingleNode head, int dividedListInto) {
