@@ -5,19 +5,20 @@ package com.anilstack.ds.interivew.util;
  */
 public class Employee {
 
-    protected int id;
-    protected String name;
-    protected String gender;
+    public int id;
+    public String name;
+    public String gender;
 
-    protected int age;
+    public int age;
 
+    public String department;
 
-
-    public Employee(int id, String name, String gender, int age) {
+    public Employee(int id, String name, String gender, int age, String department) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.age = age;
+        this.department = department;
     }
 
     public int getId() {
@@ -52,6 +53,14 @@ public class Employee {
         this.age = age;
     }
 
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -59,6 +68,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
                 ", age=" + age +
+                ", department='" + department + '\'' +
                 '}';
     }
 }
