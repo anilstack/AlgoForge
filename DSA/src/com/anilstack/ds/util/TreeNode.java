@@ -46,6 +46,22 @@ public class TreeNode {
     public void setRight(TreeNode right) {
         this.right = right;
     }
+
+    public static void inorderTraversal(TreeNode node) {
+        if (node != null) {
+            inorderTraversal(node.getLeft());
+            System.out.print(node.getVal() + " ");
+            inorderTraversal(node.getRight());
+        }
+    }
+
+    public static void postOrderTraversal(TreeNode node) {
+        if (node!=null) {
+            System.out.println(node.getVal() + " ");
+            postOrderTraversal(node.getLeft());
+            postOrderTraversal(node.getRight());
+        }
+    }
 }
 
 
