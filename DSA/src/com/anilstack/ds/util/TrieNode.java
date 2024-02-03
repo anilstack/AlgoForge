@@ -8,8 +8,10 @@ public class TrieNode {
     private TrieNode[] children = null;
     private boolean isWordEnd;
 
+    private int count;      // for MapSumPair
+
     public TrieNode() {
-        children = new TrieNode[26];
+        children = new TrieNode[27];
     }
 
     public TrieNode[] getChildren() {
@@ -26,5 +28,13 @@ public class TrieNode {
 
     public void setWordEnd(boolean wordEnd) {
         isWordEnd = wordEnd;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
